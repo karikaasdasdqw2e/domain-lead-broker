@@ -5,13 +5,13 @@ export type Lead = {
   country: string;
   industry: string;
   fitReason: string;
-  domainWeakness: string;
+  upgradeReason: string;
   publicEmail: string;
   salesEmail: string;
   whatsapp: string;
-  phone: string;
-  contactPageUrl: string;
-  linkedInCompanyPage: string;
+  publicPhone: string;
+  contactPage: string;
+  linkedin: string;
   decisionMakerName: string;
   decisionMakerRole: string;
   score: number;
@@ -23,15 +23,20 @@ export type Lead = {
 
 export type ResearchRequest = {
   domain: string;
-  niche: string;
-  buyerCategories: string[];
+  categories: string[];
   countries?: string[];
   maxResults: number;
 };
 
+export type ResearchResponse = {
+  domain: string;
+  queries: string[];
+  leads: Lead[];
+};
+
 export type SearchResult = {
   title: string;
-  link: string;
+  url: string;
   snippet: string;
 };
 
